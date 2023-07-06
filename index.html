@@ -1,0 +1,175 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Quiz App</h2>
+        <form id="quizForm">
+            <div class="form-group">
+                <label for="question1">Question 1: What is the capital of France?</label><br>
+                <label class="radio-inline"><input type="radio" name="question1" value="Paris"> Paris</label>
+                <label class="radio-inline"><input type="radio" name="question1" value="London"> London</label>
+                <label class="radio-inline"><input type="radio" name="question1" value="Berlin"> Berlin</label>
+            </div>
+            <div class="form-group">
+                <label for="question2">Question 2: Who painted the Mona Lisa?</label><br>
+                <label class="radio-inline"><input type="radio" name="question2" value="Leonardo da Vinci"> Leonardo da Vinci</label>
+                <label class="radio-inline"><input type="radio" name="question2" value="Pablo Picasso"> Pablo Picasso</label>
+                <label class="radio-inline"><input type="radio" name="question2" value="Vincent van Gogh"> Vincent van Gogh</label>
+            </div>
+            <div class="form-group">
+                <label for="question3">Question 3: What is the largest planet in our solar system?</label><br>
+                <label class="radio-inline"><input type="radio" name="question3" value="Jupiter"> Jupiter</label>
+                <label class="radio-inline"><input type="radio" name="question3" value="Mars"> Mars</label>
+                <label class="radio-inline"><input type="radio" name="question3" value="Saturn"> Saturn</label>
+            </div>
+            <div class="form-group">
+                <label for="question4">Question 4: what is the capital of pakistan </label><br>
+                <label class="radio-inline"><input type="radio" name="question4" value="ISLAMABAD">ISLAMABAD</label>
+                <label class="radio-inline"><input type="radio" name="question4" value="Mars"> Mars</label>
+                <label class="radio-inline"><input type="radio" name="question4" value="Saturn"> Saturn</label>
+            </div>
+            <div class="form-group">
+                <label for="question5">Question 5: how many countries are there in world</label><br>
+                <label class="radio-inline"><input type="radio" name="question5" value="123"> 123</label>
+                <label class="radio-inline"><input type="radio" name="question5" value="786"> 786</label>
+                <label class="radio-inline"><input type="radio" name="question5" value="195"> 195</label>
+            </div>
+            <div class="form-group">
+                <label for="question6">Question 6: What is the capital of France?</label><br>
+                <label class="radio-inline"><input type="radio" name="question6" value="Paris"> Paris</label>
+                <label class="radio-inline"><input type="radio" name="question6" value="London"> London</label>
+                <label class="radio-inline"><input type="radio" name="question6" value="Berlin"> Berlin</label>
+            </div>
+            <div class="form-group">
+                <label for="question7">Question 7: Who painted the Mona Lisa?</label><br>
+                <label class="radio-inline"><input type="radio" name="question7" value="Leonardo da Vinci"> Leonardo da Vinci</label>
+                <label class="radio-inline"><input type="radio" name="question7" value="Pablo Picasso"> Pablo Picasso</label>
+                <label class="radio-inline"><input type="radio" name="question7" value="Vincent van Gogh"> Vincent van Gogh</label>
+            </div>
+            <div class="form-group">
+                <label for="question8">Question 8: What is the largest planet in our solar system?</label><br>
+                <label class="radio-inline"><input type="radio" name="question8" value="Jupiter"> Jupiter</label>
+                <label class="radio-inline"><input type="radio" name="question8" value="Mars"> Mars</label>
+                <label class="radio-inline"><input type="radio" name="question8" value="Saturn"> Saturn</label>
+            </div>
+            <div class="form-group">
+                <label for="question9">Question 9: what is the capital of pakistan </label><br>
+                <label class="radio-inline"><input type="radio" name="question9" value="ISLAMABAD">ISLAMABAD</label>
+                <label class="radio-inline"><input type="radio" name="question9" value="Mars"> Mars</label>
+                <label class="radio-inline"><input type="radio" name="question9" value="Saturn"> Saturn</label>
+            </div>
+            <div class="form-group">
+                <label for="question10">Question 10: how many countries are there in world</label><br>
+                <label class="radio-inline"><input type="radio" name="question10" value="123"> 123</label>
+                <label class="radio-inline"><input type="radio" name="question10" value="786"> 786</label>
+                <label class="radio-inline"><input type="radio" name="question10" value="195"> 195</label>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    
+    <script>
+        document.getElementById("quizForm").addEventListener("submit", function(e) {
+            e.preventDefault(); // Prevent form submission
+            
+            // Get selected answers
+            var answer1 = document.querySelector('input[name="question1"]:checked').value;
+            var answer2 = document.querySelector('input[name="question2"]:checked').value;
+            var answer3 = document.querySelector('input[name="question3"]:checked').value;
+            var answer4 = document.querySelector('input[name="question4"]:checked').value;
+            var answer5 = document.querySelector('input[name="question5"]:checked').value;
+            var answer6 = document.querySelector('input[name="question6"]:checked').value;
+            var answer7 = document.querySelector('input[name="question7"]:checked').value;
+            var answer8 = document.querySelector('input[name="question8"]:checked').value;
+            var answer9 = document.querySelector('input[name="question9"]:checked').value;
+            var answer10 = document.querySelector('input[name="question10"]:checked').value;
+            
+            // Check answers and calculate score
+            var score = 0;
+            if (answer1 === "Paris") score++;
+            if (answer2 === "Leonardo da Vinci") score++;
+            if (answer3 === "Jupiter") score++;
+            if (answer4 === "ISLAMABAD") score++;
+            if (answer5 === "195") score++;
+            if (answer6 === "paris") score++;
+            if (answer7 === "Leonardo da Vinci") score++;
+            if (answer8 === "jupiter") score++;
+            if (answer9 === "ISLAMABAD") score++;
+            if (answer10 === "195") score++;
+            
+            // Display the result
+            var resultDiv = document.getElementById("result");
+            resultDiv.innerHTML = "<h3>Quiz Result</h3>";
+            resultDiv.innerHTML += "<p>Your score is: " + score + "/8</p>";
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
